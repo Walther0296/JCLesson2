@@ -20,6 +20,19 @@ public class Main {
         int result = getDifference(array6);
         System.out.println(str2 + result); // 10
 
+        // task3. Написать функцию, возвращающую истину, если в переданном массиве есть два соседних элемента,
+        // с нулевым значением.
+        System.out.println("Задание №3.");
+        String str3 = "Правда ли, что в первом переданном массиве есть два соседних элемента с нулевым значением: ";
+        int[] array4 = {7, 4, 0, 0, 8};
+        boolean result1 = checkZeroNeighbors(array4);
+        System.out.println(str3 + result1); // Выводит true
+
+        String str4 = "Правда ли, что во втором переданном массиве есть два соседних элемента с нулевым значением: ";
+        int[] array5 = {2, 0, 4, 7, 8};
+        boolean result2 = checkZeroNeighbors(array5);
+        System.out.println(str4 + result2); // Выводит false
+
     }
 
     //  task1 countEvens метод, который принимает массив чисел в качестве аргумента
@@ -54,5 +67,16 @@ public class Main {
         return diff;
     }
 
-
+    // Task3 checkZeroNeighbors принимает массив `arr` и в цикле проверяет каждый элемент
+    // и его соседа справа. Если найдено два соседних элемента
+    // с нулевым значением, то функция возвращает true. Если такие
+    // элементы не найдены, функция возвращает false.
+    public static boolean checkZeroNeighbors(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == 0 && arr[i + 1] == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
